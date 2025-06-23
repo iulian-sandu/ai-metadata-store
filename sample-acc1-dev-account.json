@@ -1,0 +1,55 @@
+{   
+    "version": "1.0",
+    "account_id": "987654321098",
+    "application": "account-configuration",
+    "environment": "dev",
+    "config": {
+        "account_name": "sample-acc1-dev",
+        "description": "This is a sample AWS account configuration for development purposes.",
+        "business_owner": "John Smith",
+        "contact_email": "john.smith@example.com",
+        "t-code": "T123",
+        "business_unit": "bu1",
+        "regions": {
+            "global": {
+                "iam_version": "1.0.1"
+            },
+            "us-east-1": {
+                "vpc_cidr": "10.245.116.0/23",
+                "vpc_public_subnets": [
+                    "10.245.116.192/26",
+                    "10.245.117.0/26",
+                    "10.245.117.64/26"
+                ],
+                "vpc_private_subnets": [
+                    "10.245.116.0/26",
+                    "10.245.116.64/26",
+                    "10.245.116.128/26"
+                ],
+                "vpc_availability_zone_ids": [
+                    "use1-az1",
+                    "use1-az2",
+                    "use1-az4"
+                ]
+            },
+            "us-west-2": {
+                "vpc_cidr_range": "10.237.0.0/23",
+                "vpc_public_subnets": [
+                    "10.237.0.192/26",
+                    "10.237.1.0/26",
+                    "10.237.1.64/26"
+                ],
+                "vpc_private_subnets": [
+                    "10.237.0.0/26",
+                    "10.237.0.64/26",
+                    "10.237.0.128/26"
+                ],
+                "vpc_availability_zone_ids": [
+                    "usw2-az1",
+                    "usw2-az2",
+                    "usw2-az3"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{   
+    "version": "2.0",
+    "account_id": "123456789012",
+    "application": "account-configuration",
+    "environment": "prd",
+    "config": {
+        "account_name": "sample-acc1-prd",
+        "description": "This is a dummy AWS account configuration for production testing.",
+        "business_owner": "Alice Johnson",
+        "contact_email": "alice.johnson@example.com",
+        "t-code": "T789",
+        "business_unit": "bu3",
+        "regions": {
+            "global": {
+                "iam_version": "2.1.0"
+            },
+            "us-east-1": {
+                "vpc_cidr": "10.150.50.0/23",
+                "vpc_public_subnets": [
+                    "10.150.50.192/26",
+                    "10.150.51.0/26",
+                    "10.150.51.64/26"
+                ],
+                "vpc_private_subnets": [
+                    "10.150.50.0/26",
+                    "10.150.50.64/26",
+                    "10.150.50.128/26"
+                ],
+                "vpc_availability_zone_ids": [
+                    "euw1-az1",
+                    "euw1-az2",
+                    "euw1-az3"
+                ]
+            },
+            "us-west-2": {
+                "vpc_cidr_range": "10.160.0.0/23",
+                "vpc_public_subnets": [
+                    "10.160.0.192/26",
+                    "10.160.1.0/26",
+                    "10.160.1.64/26"
+                ],
+                "vpc_private_subnets": [
+                    "10.160.0.0/26",
+                    "10.160.0.64/26",
+                    "10.160.0.128/26"
+                ],
+                "vpc_availability_zone_ids": [
+                    "apne1-az1",
+                    "apne1-az2",
+                    "apne1-az3"
+                ]
+            }
+        }
+    }
+}

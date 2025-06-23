@@ -1,0 +1,12 @@
+{
+    "id": "acc-006-prd",
+    "name": "Production Account 6",
+    "landing_zone_id": "487010",
+    "config": {
+        "regions": {
+            "global": {"vpc_cidr": "10.50.0.0/16"},
+            "us-east-1": {"subnets": ["10.50.1.0/24", "10.50.2.0/24"]},
+            "us-east-2": {"subnets": ["10.50.3.0/24", "10.50.4.0/24"]}
+        }
+    }
+}

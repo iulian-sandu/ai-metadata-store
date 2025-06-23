@@ -1,0 +1,20 @@
+{
+   "id": "app-004-dev",
+   "name": "Payment Dev",
+   "account_id": "acc-001-dev",
+   "config": {
+        "cicd": {
+            "pipeline_type": "azure-devops",
+            "build_tool": "dotnet",
+            "deploy_strategy": "rolling"
+        },
+        "k8s": {
+            "namespace": "payment-dev",
+            "replicas": 2,
+            "resources": {
+                "cpu": "400m",
+                "memory": "768Mi"
+            }
+        }
+   } 
+}

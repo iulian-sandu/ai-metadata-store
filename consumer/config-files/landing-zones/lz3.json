@@ -1,0 +1,11 @@
+{   
+    "id": "487010",
+    "name": "sample-landingzone-3", 
+    "config": {
+        "description": "This is a new landing zone",
+        "business_owner": "Michael Brown",
+        "contact_email": "michael.brown@example.com",
+        "t-code": "T798",         
+        "bussines_unit": "bu3"
+    }
+}

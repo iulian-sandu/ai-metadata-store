@@ -1,0 +1,32 @@
+{   
+    "version": "1.2",
+    "account_id": "33210987654",
+    "application": "banking-api",
+    "environment": "dev",
+    "config": {
+        "cicd": {
+            "pipeline_type": "github-actions",
+            "build_tool": "maven",
+            "deploy_strategy": "blue-green"
+        },
+        "k8s": {
+            "namespace": "banking-dev",
+            "replicas": 2,
+            "resources": {
+                "cpu": "500m",
+                "memory": "1Gi"
+            }
+        },
+        "iac": {
+            "terraform": {
+                "version": "1.0",
+                "backend": "s3",
+                "state_file": "banking-dev.tfstate"
+            },
+            "cloudformation": {
+                "version": "1.2",
+                "template_file": "banking-dev-template.yaml"
+            }
+        }
+    }
+}

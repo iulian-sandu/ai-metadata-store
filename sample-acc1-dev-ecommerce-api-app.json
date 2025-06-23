@@ -1,0 +1,33 @@
+{   
+    "version": "1.0",
+    "account_id": "987654321098",
+    "application": "ecommerce-api",
+    "environment": "dev",
+    "config": {
+        "cicd": {
+            "pipeline_type": "github-actions",
+            "build_tool": "maven",
+            "deploy_strategy": "blue-green"
+        },
+        "k8s": {
+            "namespace": "ecommerce-dev",
+            "replicas": 2,
+            "resources": {
+                "cpu": "500m",
+                "memory": "1Gi"
+            }
+        },
+        "cloud-os-images": {
+            "ubuntu": {
+                "version": "20.04",
+                "ami_id": "ami-0abcdef1234567890",
+                "region": "us-east-1"
+            },
+            "amazon-linux": {
+                "version": "2",
+                "ami_id": "ami-0fedcba9876543210",
+                "region": "us-west-2"
+            }
+        }
+    }
+}

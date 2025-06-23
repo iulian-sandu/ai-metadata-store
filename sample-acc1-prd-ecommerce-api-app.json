@@ -1,0 +1,33 @@
+{   
+    "version": "1.1",
+    "account_id": "123456789012",
+    "application": "ecommerce-api",
+    "environment": "prd",
+    "config": {
+        "cicd": {
+            "pipeline_type": "azure-devops",
+            "build_tool": "gradle",
+            "deploy_strategy": "canary"
+        },
+        "k8s": {
+            "namespace": "ecommerce-prd",
+            "replicas": 3,
+            "resources": {
+                "cpu": "750m",
+                "memory": "2Gi"
+            }
+        },
+        "cloud-os-images": {
+            "ubuntu": {
+                "version": "22.04",
+                "ami_id": "ami-0123456789abcdef0",
+                "region": "eu-central-1"
+            },
+            "amazon-linux": {
+                "version": "2023",
+                "ami_id": "ami-0fedcba9876543211",
+                "region": "ap-southeast-1"
+            }
+        }
+    }
+}

@@ -13,7 +13,8 @@ The challenges include:
 
 ## Features and functionality
 
-1. Authorization and Authentication - Uses AWS Cognito for secure access with client credentials.
+1. Authorization and Authentication - Uses **AWS Cognito** for secure access with client credentials, using machine to machine app client.
+2. API Gateway - Provides two resource (```/config``` and ```/ai-chat```)
 
 ## Architecture
 ### Components

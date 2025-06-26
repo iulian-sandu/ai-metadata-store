@@ -1,8 +1,7 @@
 # AWS Lambda Hackathon - 
 
-## Overview
+## Overview and problem statement
 
-:question: Problem statement
 
 
 

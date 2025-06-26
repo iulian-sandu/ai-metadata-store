@@ -58,6 +58,7 @@ Resources to be created:
     - Embedding model will be used to convert the JSON data into vector data to be used by the knowledge base.
 - Create new Agent in Bedrock. 
     - Setup Claude 3.5 Sonnet as a model and link the Knowledge base previously created.
+    - The ```agent_alias_id```, ```agent_id``` and ```knowledge_base_id``` needs to be replaced in the Lambda Bedrock operations.
 
 ## Usage
 

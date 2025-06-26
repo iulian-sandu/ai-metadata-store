@@ -48,15 +48,16 @@ The challenges include:
 Every infrastructure componenent part of the architecture diagram needs to be created and configured before using the solution. 
 
 Resources to be created:
-- Cognito user pool with M2M app client. Export ```client_id```, ```client_secret```, ```cognito_url``` and ```cognito_scope``` as environment variables.
-- API Gateway can be imported directly using the ```hackathon-api-gw-v1-oas30-apigateway.json``` provided in the ```api-gateway-export/``` directory.
-- Two lambda functions created to handle the configurations and AI chat operations. Can be created using the functions located in the ```lambda/``` directory.
-- Set the trigger for the Lambda functions from the API Gateway based on the resources ```/config``` and ```/ai-chat```
-- Create new DynamoDB table
-- Create new S3 bucket
-- Create new Bedrock Knowledge base with S3 bucket source. First you need to request access via Model Catalog in Bedrock to amazon.titan-embed-text-v2:0 and Claude 3.5 Sonnet models.
+1. Cognito user pool with M2M app client. Export ```client_id```, ```client_secret```, ```cognito_url``` and ```cognito_scope``` as environment variables.
+2. API Gateway can be imported directly using the ```hackathon-api-gw-v1-oas30-apigateway.json``` provided in the ```api-gateway-export/``` directory.
+3. Two lambda functions created to handle the configurations and AI chat operations. Can be created using the functions located in the ```lambda/``` directory.
+4. Set the trigger for the Lambda functions from the API Gateway based on the resources ```/config``` and ```/ai-chat```
+5. Create new DynamoDB table
+6. Create new S3 bucket
+7. Create new Bedrock Knowledge base with S3 bucket source. 
+    - First you need to request access via Model Catalog in Bedrock to amazon.titan-embed-text-v2:0 and Claude 3.5 Sonnet models.
     - Embedding model will be used to convert the JSON data into vector data to be used by the knowledge base.
-- Create new Agent in Bedrock. 
+8. Create new Agent in Bedrock. 
     - Setup Claude 3.5 Sonnet as a model and link the Knowledge base previously created.
     - The ```agent_alias_id```, ```agent_id``` and ```knowledge_base_id``` needs to be replaced in the Lambda Bedrock operations.
 

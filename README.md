@@ -1,4 +1,4 @@
-# AWS Lambda Hackathon - 
+# AWS Lambda Hackathon - Configuration Store Engine
 
 ## Overview
 
@@ -9,7 +9,7 @@ The challenges include:
 - Ensuring a centralized and scalable approach to configuration management
 - Maintaining consistency across multiple environments
 
-
+**Solution**: 
 
 
 ## Features and functionality

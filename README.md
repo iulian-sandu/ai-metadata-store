@@ -13,6 +13,8 @@ The challenges include:
 
 ## Features and functionality
 
+1. Authorization and Authentication - Uses AWS Cognito for secure access with client credentials.
+
 ## Architecture
 ### Components
 

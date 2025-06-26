@@ -9,7 +9,7 @@ The challenges include:
 - Ensuring a centralized and scalable approach to configuration management
 - Maintaining consistency across multiple environments
 
-**Solution**: A Configuration Store Engine with AI capabilities, to provide a centralized, automated and intelligent solution for managing configurations.
+**Solution**: A Configuration Store Engine with AI capabilities, to provide a centralized, automated and intelligent solution for managing and interact with the configurations.
 
 ## Features and functionality
 

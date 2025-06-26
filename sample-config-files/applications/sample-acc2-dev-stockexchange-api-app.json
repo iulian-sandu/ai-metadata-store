@@ -1,6 +1,5 @@
 {   
-    "version": "1.2",
-    "account_id": "123456789012",
+    "account_id": "33210987654",
     "application": "stockexchange-api",
     "environment": "dev",
     "config": {
@@ -11,7 +10,7 @@
         },
         "k8s": {
             "namespace": "stockexchange-dev",
-            "replicas": 4,
+            "replicas": "4",
             "resources": {
                 "cpu": "1",
                 "memory": "3Gi"

@@ -1,5 +1,4 @@
 {   
-    "version": "1.2",
     "account_id": "33210987654",
     "application": "banking-api",
     "environment": "dev",
@@ -11,7 +10,7 @@
         },
         "k8s": {
             "namespace": "banking-dev",
-            "replicas": 2,
+            "replicas": "2",
             "resources": {
                 "cpu": "500m",
                 "memory": "1Gi"

@@ -1,0 +1,157 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "hackathon-api-gw",
+    "version" : "2025-06-25T20:33:38Z"
+  },
+  "servers" : [ {
+    "url" : "https://qxrfz64v5f.execute-api.eu-central-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : "v1"
+      }
+    }
+  } ],
+  "paths" : {
+    "/config" : {
+      "post" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "cognito" : [ "default-m2m-resource-server-zismy/read" ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:050451357127:function:hackathon-dynamodb-main/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "requestTemplates" : {
+            "application/json" : "{\n  \"body-json\": $input.json('$'),\n  \"resource-path\" : \"$context.resourcePath\",\n  \"http-method\" : \"$context.httpMethod\"\n}"
+          },
+          "passthroughBehavior" : "when_no_match",
+          "timeoutInMillis" : 29000,
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws"
+        }
+      }
+    },
+    "/ai-chat" : {
+      "post" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "cognito" : [ "default-m2m-resource-server-zismy/read" ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:050451357127:function:hackathon-lambda-bedrock-chat/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "requestTemplates" : {
+            "application/json" : "{\n  \"httpMethod\": \"$context.httpMethod\",\n  \"body\": $input.json('$')\n}"
+          },
+          "passthroughBehavior" : "when_no_match",
+          "timeoutInMillis" : 29000,
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws"
+        }
+      }
+    },
+    "/config/{account_id}/{application_name}" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "application_name",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "account_id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Empty"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "cognito" : [ "default-m2m-resource-server-zismy/read" ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-central-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-central-1:050451357127:function:hackathon-dynamodb-main/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "requestTemplates" : {
+            "application/json" : "{\n  \"account_id\": \"$input.params('account_id')\",\n  \"application_name\": \"$input.params('application_name')\",\n  \"resource-path\": \"$context.resourcePath\",\n  \"http-method\": \"$context.httpMethod\"\n}"
+          },
+          "passthroughBehavior" : "when_no_match",
+          "timeoutInMillis" : 29000,
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws"
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Empty" : {
+        "title" : "Empty Schema",
+        "type" : "object"
+      }
+    },
+    "securitySchemes" : {
+      "cognito" : {
+        "type" : "apiKey",
+        "name" : "Authorization",
+        "in" : "header",
+        "x-amazon-apigateway-authtype" : "cognito_user_pools",
+        "x-amazon-apigateway-authorizer" : {
+          "providerARNs" : [ "arn:aws:cognito-idp:eu-central-1:050451357127:userpool/eu-central-1_P5mJVNoxD" ],
+          "type" : "cognito_user_pools"
+        }
+      }
+    }
+  }
+}

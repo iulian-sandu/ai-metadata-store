@@ -1,5 +1,4 @@
 {   
-    "version": "2.0",
     "account_id": "123456789012",
     "application": "account-configuration",
     "environment": "prd",
@@ -8,11 +7,11 @@
         "description": "This is a dummy AWS account configuration for production testing.",
         "business_owner": "Alice Johnson",
         "contact_email": "alice.johnson@example.com",
-        "t-code": "T789",
+        "t-code": "T50034-2025",
         "business_unit": "bu3",
         "regions": {
             "global": {
-                "iam_version": "2.1.0"
+                "iam_version": "3.8.0"
             },
             "us-east-1": {
                 "vpc_cidr": "10.150.50.0/23",
@@ -48,6 +47,24 @@
                     "apne1-az1",
                     "apne1-az2",
                     "apne1-az3"
+                ]
+            },
+            "eu-central-1": {
+                "vpc_cidr_range": "10.170.0.0/23",
+                "vpc_public_subnets": [
+                    "10.170.0.192/26",
+                    "10.170.1.0/26",
+                    "10.170.1.64/26"
+                ],
+                "vpc_private_subnets": [
+                    "10.170.0.0/26",
+                    "10.170.0.64/26",
+                    "10.170.0.128/26"
+                ],
+                "vpc_availability_zone_ids": [
+                    "euc1-az1",
+                    "euc1-az2",
+                    "euc1-az3"
                 ]
             }
         }

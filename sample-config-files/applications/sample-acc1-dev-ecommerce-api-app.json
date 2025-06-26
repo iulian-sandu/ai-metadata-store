@@ -1,5 +1,4 @@
 {   
-    "version": "1.0",
     "account_id": "987654321098",
     "application": "ecommerce-api",
     "environment": "dev",
@@ -11,7 +10,7 @@
         },
         "k8s": {
             "namespace": "ecommerce-dev",
-            "replicas": 2,
+            "replicas": "2",
             "resources": {
                 "cpu": "500m",
                 "memory": "1Gi"

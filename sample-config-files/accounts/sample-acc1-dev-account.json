@@ -1,5 +1,4 @@
 {   
-    "version": "1.0",
     "account_id": "987654321098",
     "application": "account-configuration",
     "environment": "dev",
@@ -8,7 +7,7 @@
         "description": "This is a sample AWS account configuration for development purposes.",
         "business_owner": "John Smith",
         "contact_email": "john.smith@example.com",
-        "t-code": "T123",
+        "t-code": "T1236-2028",
         "business_unit": "bu1",
         "regions": {
             "global": {

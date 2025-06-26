@@ -1,5 +1,4 @@
 {   
-    "version": "1.1",
     "account_id": "123456789012",
     "application": "ecommerce-api",
     "environment": "prd",
@@ -11,7 +10,7 @@
         },
         "k8s": {
             "namespace": "ecommerce-prd",
-            "replicas": 3,
+            "replicas": "3",
             "resources": {
                 "cpu": "750m",
                 "memory": "2Gi"

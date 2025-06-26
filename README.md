@@ -1,11 +1,11 @@
 # AWS Lambda Hackathon - 
 
-## Overview and problem statement
+## Overview & problem statement
 
 
 
 
-## Features and functionality
+## Features & functionality
 
 
 ## Architecture

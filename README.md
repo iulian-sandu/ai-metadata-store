@@ -108,3 +108,10 @@ This configuration suggests that the application uses a rolling deployment strat
 ```
 
 ## Future Enhancements
+
+- Automate infrastructure deployment using Terraform.
+- Integrate the solution with workflows to create and set up a new AWS account.
+- Extend the Agentic AI functions to handle the creation of resources based on the configuration.
+- Integrate the AI chat function with Slack and interact via messages.
+- Extend the Agentic AI functions to proactive actions based on the changes done in the configuration.
+- Alerting, cost control and monitoring.

@@ -65,33 +65,35 @@ Resources to be created:
 
 Sample clients are located in the ```python-clients/``` directory.
 
-1. JSON Configuration management 
+### 1. JSON Configuration management 
 
 **POST request** (create/update configuration)
 
-Usecase: I want to store the configuration of a new AWS account that was just created.
-Command: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "account" --json_file "sample-acc2-dev-account.json"  ```
+**Usecase**: I want to store the configuration of a new AWS account that was just created.
+**Command**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "account" --json_file "sample-acc2-dev-account.json"  ```
 
-Response: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "account-configuration", "environment": "dev", "version": "2025-06-26T18:46:14.791778", "kb_status": "started_ingestion_job"}'} ```
+**Response**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "account-configuration", "environment": "dev", "version": "2025-06-26T18:46:14.791778", "kb_status": "started_ingestion_job"}'} ```
 
-Usecase: I want to store the configuration of an application running in the AWS account, for CICD, k8s and Golden AMIs.
-Command: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "application" --json_file "sample-acc2-dev-stockexchange-api-app.json" ```
+**Usecase**: I want to store the configuration of an application running in the AWS account, for CICD, k8s and Golden AMIs.
+**Command**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "application" --json_file "sample-acc2-dev-stockexchange-api-app.json" ```
 
-Response: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "stockexchange-api", "environment": "dev", "version": "2025-06-26T18:49:16.484833", "kb_status": "started_ingestion_job"}'} ```
+**Response**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "stockexchange-api", "environment": "dev", "version": "2025-06-26T18:49:16.484833", "kb_status": "started_ingestion_job"}'} ```
 
 
-2. AI chat
+### 2. AI chat
 
-Prompt used: call_chat_api("What is the CICD configuration for stockexchange-api?")
-Command: ``` python3 ./lambda-bedrock-client.py  ```
+**Prompt** used: call_chat_api("What is the CICD configuration for stockexchange-api?")
+**Command**: ``` python3 ./lambda-bedrock-client.py  ```
 
-Response: 
+**Response**: 
+```
 The CICD configuration for stockexchange-api in the development environment includes:
 
 1. Deploy strategy: rolling
 2. Pipeline type: gitlab-ci
 3. Build tool: npm
 
-This configuration suggests that the application uses a rolling deployment strategy, utilizes GitLab CI for its continuous integration and deployment pipeline, and uses npm as the build tool for managing dependencies and building the project.
+This configuration suggests that the application uses a rolling deployment strategy, utilizes GitLab CI for its continuous integration and deployment pipeline, and uses npm as the build tool for managing dependencies and building the project. 
+```
 
 ## Future Enhancements

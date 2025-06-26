@@ -18,16 +18,16 @@ The challenges include:
 
 ```
 ├── /ai-chat 
-│   └── POST - Bedrock AI agent to provide AI-driven responses based on the knowledge base.
+│   └── POST - Bedrock AI agent to provide AI-driven responses based on the knowledge base
 └── /config
-    ├── POST - Stores configurations in DynamoDB and exports them to S3.
+    ├── POST - Stores configurations in DynamoDB and exports them to S3
     └── /{account_id}
         └── /{application_name}
-            └── GET - Retrieves configurations from DynamoDB.
+            └── GET - Retrieves configurations from DynamoDB
 ```
 
-3. Agentic AI from Bedrock integrated with Knowledge base and S3 source
-4. Knowledge Base Sync - Automatically triggers ingestion of new configurations into the Bedrock knowledge base.
+3. Agentic AI from Bedrock integrated with Knowledge base with S3 data source
+4. Knowledge Base Sync - Automatically triggers ingestion of new configurations into the Bedrock knowledge base
 
 ## Architecture
 

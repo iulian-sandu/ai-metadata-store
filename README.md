@@ -31,6 +31,8 @@ The challenges include:
 
 ## Architecture
 
+![Alt text](hackathon-AWS-end2end-flow.jpeg "a title")
+
 ### Components
 
 1. **AWS Cognito** - For secure access with client credentials, using machine to machine app client.

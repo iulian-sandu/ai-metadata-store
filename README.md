@@ -45,6 +45,10 @@ The challenges include:
 
 
 ## Setup
+Every infrastructure componenent part of the architecture diagram needs to be created and configured before using the solution. 
+
+Resources to be created:
+- Cognito user pool with m2m app client. Export ```client_id```, ```client_secret```, ```cognito_url``` and ```cognito_scope``` as environment variables.
 
 ## Usage
 

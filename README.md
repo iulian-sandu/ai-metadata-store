@@ -17,9 +17,8 @@ The challenges include:
 2. Configuration management and AI Chat
 
 ```
-.
 ├── /ai-chat 
-│   └── POST - Integrates with Bedrock to provide AI-driven responses based on the knowledge base.
+│   └── POST - Bedrock AI agent to provide AI-driven responses based on the knowledge base.
 └── /config
     ├── POST - Stores configurations in DynamoDB and exports them to S3.
     └── /{account_id}

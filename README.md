@@ -15,6 +15,8 @@ The challenges include:
 
 1. Authorization and authentication, by integrating Cognito with API Gateway as an authorizer.
 2. Configuration management and AI Chat
+
+```
 .
 ├── /ai-chat 
 │   └── POST - Integrates with Bedrock to provide AI-driven responses based on the knowledge base.
@@ -23,6 +25,8 @@ The challenges include:
     └── /{account_id}
         └── /{application_name}
             └── GET - Retrieves configurations from DynamoDB.
+```
+
 3. Agentic AI from Bedrock integrated with Knowledge base and S3 source
 4. Knowledge Base Sync - Automatically triggers ingestion of new configurations into the Bedrock knowledge base.
 

@@ -70,19 +70,20 @@ Sample clients are located in the ```python-clients/``` directory.
 **POST request** (create/update configuration)
 
 **Usecase 1**: I want to store the configuration of a new AWS account that was just created.
-**Command**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "account" --json_file "sample-acc2-dev-account.json"  ```
+**Command 1**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "account" --json_file "sample-acc2-dev-account.json"  ```
 
-**Response**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "account-configuration", "environment": "dev", "version": "2025-06-26T18:46:14.791778", "kb_status": "started_ingestion_job"}'} ```
+**Response 1**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "account-configuration", "environment": "dev", "version": "2025-06-26T18:46:14.791778", "kb_status": "started_ingestion_job"}'} ```
 
 **Usecase 2**: I want to store the configuration of an application running in the AWS account, for CICD, k8s and Golden AMIs.
-**Command**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "application" --json_file "sample-acc2-dev-stockexchange-api-app.json" ```
+**Command 2**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "application" --json_file "sample-acc2-dev-stockexchange-api-app.json" ```
 
-**Response**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "stockexchange-api", "environment": "dev", "version": "2025-06-26T18:49:16.484833", "kb_status": "started_ingestion_job"}'} ```
+**Response 2**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "stockexchange-api", "environment": "dev", "version": "2025-06-26T18:49:16.484833", "kb_status": "started_ingestion_job"}'} ```
 
 
 ### 2. AI chat
 
 **Prompt**: call_chat_api("What is the CICD configuration for stockexchange-api?")
+
 **Command**: ``` python3 ./lambda-bedrock-client.py  ```
 
 **Response**: 

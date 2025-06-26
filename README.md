@@ -49,6 +49,7 @@ Every infrastructure componenent part of the architecture diagram needs to be cr
 
 Resources to be created:
 - Cognito user pool with m2m app client. Export ```client_id```, ```client_secret```, ```cognito_url``` and ```cognito_scope``` as environment variables.
+- API Gateway can be imported directly using the ```hackathon-api-gw-v1-oas30-apigateway.json``` provided in the ```/api-gateway-export/``` directory.
 
 ## Usage
 

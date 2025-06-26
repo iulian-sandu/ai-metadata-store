@@ -13,7 +13,24 @@ The challenges include:
 
 ## Features and functionality
 
-1. **AWS Cognito** - For secure authorization and authentication with client credentials, using machine to machine app client.
+1. Authorization and authentication, by integrating Cognito with API Gateway as an authorizer.
+2. Configuration management and AI Chat
+.
+├── /ai-chat 
+│   └── POST - Integrates with Bedrock to provide AI-driven responses based on the knowledge base.
+└── /config
+    ├── POST - Stores configurations in DynamoDB and exports them to S3.
+    └── /{account_id}
+        └── /{application_name}
+            └── GET - Retrieves configurations from DynamoDB.
+3. Agentic AI from Bedrock integrated with Knowledge base and S3 source
+4. Knowledge Base Sync - Automatically triggers ingestion of new configurations into the Bedrock knowledge base.
+
+## Architecture
+
+### Components
+
+1. **AWS Cognito** - For secure access with client credentials, using machine to machine app client.
 2. **API Gateway** - Provides two resource (```/config``` and ```/ai-chat```) for configuration management (```POST``` and ```GET```) and AI chat functionality.
 3. **Lambda** - One function manages the configuration store operations, while another handles the Bedrock AI chat interaction to provide insights about the stored configurations.
 4. **DynamoDB** - Stores JSON configurations as the single source of truth. Each item will get a unique version.
@@ -21,8 +38,6 @@ The challenges include:
 6. **S3** - Stores exported configurations for Bedrock ingestion.
 
 
-## Architecture
-### Components
 
 ## Setup
 

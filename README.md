@@ -67,7 +67,7 @@ Sample clients are located in the ```python-clients/``` directory.
 
 ### JSON Configuration management 
 
-**POST request** (create/update configuration)
+**1. POST request** (create/update configuration)
 
 **Usecase 1**: I want to store the configuration of a new AWS account that was just created.
 
@@ -80,6 +80,14 @@ Sample clients are located in the ```python-clients/``` directory.
 **Command 2**: ``` python3 ./lambda-dynamodb-client.py --post --config_scope "application" --json_file "sample-acc2-dev-stockexchange-api-app.json" ```
 
 **Response 2**: ``` {'statusCode': 200, 'body': '{"account_id": "33210987654", "application_name": "stockexchange-api", "environment": "dev", "version": "2025-06-26T18:49:16.484833", "kb_status": "started_ingestion_job"}'} ```
+
+**2. GET request**
+
+**Usecase**: I want to retrive the configuration for account ID 33210987654 and scope account configuration (like VPC, subnets, etc.)
+
+**Command**: ```python3 ./lambda-dynamodb-client.py --get --account_id "33210987654" --application_name "account-configuration"``` 
+
+**Response**: ``` {'environment': 'dev', 'application_name': 'account-configuration', 'version': '2025-06-26T18:46:14.791778', 'account_id': '33210987654', 'config': {'business_owner': 'Bob Smith', 'regions': {'ap-southeast-1': {'vpc_cidr_range': '10.210.0.0/23', 'vpc_public_subnets': ['10.210.0.192/26', '10.210.1.0/26', '10.210.1.64/26'], 'vpc_private_subnets': ['10.210.0.0/26', '10.210.0.64/26', '10.210.0.128/26'], 'vpc_availability_zone_ids': ['apse1-az1', 'apse1-az2', 'apse1-az3']}, 'global': {'iam_version': '6.1.0'}, 'eu-central-1': {'vpc_public_subnets': ['10.200.100.192/26', '10.200.101.0/26', '10.200.101.64/26'], 'vpc_private_subnets': ['10.200.100.0/26', '10.200.100.64/26', '10.200.100.128/26'], 'vpc_cidr': '10.200.100.0/23', 'vpc_availability_zone_ids': ['euc1-az1', 'euc1-az2', 'euc1-az3']}}, 'account_name': 'sample-acc2-dev', 'description': 'This is a dummy AWS account configuration for development testing.', 't-code': 'T123-22099', 'business_unit': 'bu8', 'contact_email': 'bob.smith@example.com'}} ```
 
 
 ### 2. AI chat

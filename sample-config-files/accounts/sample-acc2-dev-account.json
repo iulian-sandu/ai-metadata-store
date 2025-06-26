@@ -7,11 +7,11 @@
         "description": "This is a dummy AWS account configuration for development testing.",
         "business_owner": "Bob Smith",
         "contact_email": "bob.smith@example.com",
-        "t-code": "T123",
-        "business_unit": "bu4",
+        "t-code": "T123-22099",
+        "business_unit": "bu8",
         "regions": {
             "global": {
-                "iam_version": "3.0.0"
+                "iam_version": "6.1.0"
             },
             "eu-central-1": {
                 "vpc_cidr": "10.200.100.0/23",

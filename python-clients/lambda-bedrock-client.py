@@ -41,6 +41,7 @@ def call_chat_api(prompt):
     response = requests.post(api_gw_url, headers=headers, json=data)
     print(response.json()['response'])
 
+call_chat_api("What is the CICD configuration for stockexchange-api?")
 
 # call_chat_api("What is the deployment strategy for ecommerce-api?")
 # call_chat_api("Tell me the latest IAM version for the account sample-acc1-prd")
